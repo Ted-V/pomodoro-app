@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pomodoro Timer</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>Pomodoro Timer</h1>
-  </header>
-  <main>
-    <div class="timer-container">
-      <div class="tomato" id="timer-display">
-        <div class="stem"></div>
-        <span id="time">25:00</span>
-      </div>
-      <div class="controls">
-        <button id="start-button" onclick="pomodoroTimer.startTimer()">Start</button>
-        <button id="reset-button" onclick="pomodoroTimer.resetTimer()" disabled>Reset</button>
-      </div>
-    </div>
-    <div class="counter">
-      <h2 id="session-counter">Completed Pomodoros: 0</h2>
-    </div>
-  </main>
-  <footer>
-    <p>Developed by Your Name &copy; 2023</p>
-  </footer>
+    <header>
+        <h1>Pomodoro Timer</h1>
+    </header>
+    <main>
+        <div class="timer-container">
+            <div class="tomato" id="timer-display">
+                <div class="stem"></div>
+                <span id="time">25:00</span>
+            </div>
+            <div class="controls">
+                <button id="start-button" onclick="pomodoroTimer.startTimer()">Start</button>
+                <button id="reset-button" onclick="pomodoroTimer.resetTimer()" disabled>Reset</button>
+            </div>
+        </div>
+        <div class="counter">
+            <h2 id="session-counter">Completed Pomodoros: 0</h2>
+        </div>
+    </main>
+    <footer>
+        <p><a href="https://github.com/Ted-V/pomodoro-app">See the project on GitHub</a></p>
+    </footer>
 
-  <script src="script.js"></script>
+    <audio id="alarm-sound" src="alarm.wav"></audio>
+    <script src="script.js"></script>
 </body>
-</html>
 
+</html>
