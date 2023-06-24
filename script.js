@@ -46,9 +46,13 @@ class PomodoroTimer {
 
             if (!this.isBreak) {
                 this.minutes = 5;
+                this.seconds = 0;
                 this.isBreak = true;
+                this.playAlarmSound();
+                this.showNotification();
             } else {
                 this.minutes = 25;
+                this.seconds = 0;
                 this.isBreak = false;
                 this.counter++;
                 this.updateSessionCounter();
@@ -71,6 +75,29 @@ class PomodoroTimer {
 
     formatTime(time) {
         return time < 10 ? "0" + time : time;
+    }
+
+    playAlarmSound() {
+        const audio = new Audio("alarm.wav");
+        audio.play();
+    }
+
+    showNotification() {
+        if (Notification.permission === "granted") {
+            new Notification("Pomodoro Timer", {
+                body: "Pomodoro session completed! Take a break.",
+                icon: "tomato.png"
+            });
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(function (permission) {
+                if (permission === "granted") {
+                    new Notification("Pomodoro Timer", {
+                        body: "Pomodoro session completed! Take a break.",
+                        icon: "tomato.png"
+                    });
+                }
+            });
+        }
     }
 }
 
