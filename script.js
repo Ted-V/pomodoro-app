@@ -2,8 +2,8 @@
 class PomodoroTimer {
     constructor() {
         this.timer = null; // Timer reference
-        this.minutes = 25; // Initial minutes
-        this.seconds = 0; // Initial seconds
+        this.minutes = 0; // Initial minutes
+        this.seconds = 2; // Initial seconds
         this.isRunning = false; // Timer running flag
         this.isBreak = false; // Break mode flag
         this.counter = 0; // Completed pomodoros counter
@@ -52,6 +52,10 @@ class PomodoroTimer {
             this.isRunning = false;
             document.getElementById("start-button").innerHTML = "Start";
             document.getElementById("reset-button").disabled = true;
+            this.counter++;
+            this.updateSessionCounter();
+            this.playAlarmSound();
+            this.showNotification();
 
             if (!this.isBreak) {
                 // Start break
@@ -61,10 +65,6 @@ class PomodoroTimer {
                 // Start next pomodoro session
                 this.minutes = 25;
                 this.isBreak = false;
-                this.counter++;
-                this.updateSessionCounter();
-                this.playAlarmSound();
-                this.showNotification();
             }
         }
 
