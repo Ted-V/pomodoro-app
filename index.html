@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
+    <link rel="icon" type="image/x-icon" href="/tomato.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,26 +13,31 @@
     <header>
         <h1>Pomodoro Timer</h1>
     </header>
-    <main>
-        <div class="timer-container">
-            <div class="tomato" id="timer-display">
+
+    <div class="container">
+        <div class="tomato-timer">
+            <div class="tomato">
                 <div class="stem"></div>
-                <span id="time">25:00</span>
-            </div>
-            <div class="controls">
-                <button id="start-button" onclick="pomodoroTimer.startTimer()">Start</button>
-                <button id="reset-button" onclick="pomodoroTimer.resetTimer()" disabled>Reset</button>
+                <div id="time" class="time">25:00</div>
             </div>
         </div>
-        <div class="counter">
-            <h2 id="session-counter">Completed Pomodoros: 0</h2>
+        <div class="controls">
+            <button id="start-button" class="button" title="Start / Pause timer">Start</button>
+            <button id="reset-button" class="button" title="Reset timer" disabled>Reset</button>
         </div>
-    </main>
+        <div id="session-counter" class="session-counter">Completed Pomodoros: 0</div>
+        <div class="mode-toggle">
+            <button id="mode-toggle-button" class="button" title="Toggle background color">
+                <span id="mode-toggle-icon" class="mode-toggle-icon"></span>
+            </button>
+        </div>
+    </div>
+
     <footer>
-        <p><a href="https://github.com/Ted-V/pomodoro-app">See the project on GitHub</a></p>
+        <a href="https://ted-v.github.io/pomodoro-app/">See the project on GitHub</a>
     </footer>
 
-    <audio id="alarm-sound" src="alarm.wav"></audio>
+    <audio src="alarm.wav"></audio>
     <script src="script.js"></script>
 </body>
 
