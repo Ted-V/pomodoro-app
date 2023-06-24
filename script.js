@@ -2,8 +2,8 @@
 class PomodoroTimer {
     constructor() {
         this.timer = null; // Timer reference
-        this.minutes = 0; // Initial minutes
-        this.seconds = 2; // Initial seconds
+        this.minutes = 25; // Initial minutes
+        this.seconds = 0; // Initial seconds
         this.isRunning = false; // Timer running flag
         this.isBreak = false; // Break mode flag
         this.counter = 0; // Completed pomodoros counter
