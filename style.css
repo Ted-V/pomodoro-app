@@ -1,0 +1,102 @@
+:root {
+    --color-tomato: tomato;
+    --color-stem: #66BB6A;
+    --color-background: #f7f7f7;
+    --color-text: #fff;
+    --color-button-bg: #333;
+    --color-button-hover: #555;
+    --color-header-bg: #333;
+    --color-footer-bg: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-background);
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--color-header-bg);
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tomato {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--color-tomato);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: var(--color-text);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.stem {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 30px;
+    background-color: var(--color-stem);
+    border-radius: 50%;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: var(--color-button-bg);
+    color: var(--color-text);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-button-hover);
+}
+
+.counter {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color-footer-bg);
+    color: var(--color-text);
+}
