@@ -35,6 +35,10 @@ main {
     padding: 20px;
 }
 
+a {
+    color: #f7f7f7;
+}
+
 .timer-container {
     display: flex;
     flex-direction: column;
