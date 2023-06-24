@@ -1,106 +1,149 @@
 :root {
-    --color-tomato: tomato;
-    --color-stem: #66BB6A;
-    --color-background: #f7f7f7;
-    --color-text: #fff;
-    --color-button-bg: #333;
-    --color-button-hover: #555;
-    --color-header-bg: #333;
-    --color-footer-bg: #333;
+    --primary-color: #73a48b;
+    --secondary-color: #00cc66;
+    --background-color: #f1f1f1;
+    --text-color: #333;
+    --timer-color: #ff6347;
+    --stem-color: #7bb155;
+}
+
+html {
+    height: 100vh;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: var(--color-background);
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-header {
-    text-align: center;
-    padding: 20px 0;
-    background-color: var(--color-header-bg);
-    color: var(--color-text);
-}
-
-h1 {
-    font-size: 28px;
-    margin: 0;
-}
-
-main {
-    flex: 1;
-    padding: 20px;
+    padding: 0;
 }
 
 a {
-    color: #f7f7f7;
+    color: white;
 }
 
-.timer-container {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.tomato-timer {
+    position: relative;
     margin-bottom: 20px;
 }
 
 .tomato {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 200px;
     height: 200px;
+    background-color: var(--timer-color);
     border-radius: 50%;
-    background-color: var(--color-tomato);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 48px;
-    color: var(--color-text);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
     position: relative;
+    margin-top: 40px;
 }
 
 .stem {
     position: absolute;
-    top: -15px;
+    top: -20px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
+    /* Center the stem horizontally */
+    transform: translateX(-70%) rotate(-30deg);
+    width: 13px;
     height: 30px;
-    background-color: var(--color-stem);
-    border-radius: 50%;
+    background-color: var(--stem-color);
+    border-radius: 50% 50% 0 0;
+}
+
+.time {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
 }
 
 .controls {
     display: flex;
-    gap: 10px;
-    margin-top: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-button {
-    font-size: 24px;
+.button {
     padding: 10px 20px;
-    background-color: var(--color-button-bg);
-    color: var(--color-text);
+    font-size: 16px;
     border: none;
+    border-radius: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+    color: #000000;
 }
 
-button:hover {
-    background-color: var(--color-button-hover);
+#start-button {
+    background-color: #d6d6d6;
 }
 
-.counter {
+#reset-button {
+    background-color: #d6d6d6;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.session-counter {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.mode-toggle {
     text-align: center;
 }
 
+#mode-toggle-button {
+    border: none;
+    color: #7a3030;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4em;
+}
+
+.mode-toggle-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.mode-toggle-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-image: url("color-mode-toggle.png");
+}
+
+.dark-mode {
+    --primary-color: #4e4e4e;
+    --secondary-color: #00cc66;
+    --background-color: #222;
+    --text-color: #fff;
+    --timer-color: #e64e4e;
+    --stem-color: #7bb155;
+}
+
+header,
 footer {
     text-align: center;
     padding: 10px;
-    background-color: var(--color-footer-bg);
-    color: var(--color-text);
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
